@@ -207,7 +207,7 @@ export default function Hero({ product }: { product: Product }) {
         loop
         playsInline
         poster="/image-poster-2.png"
-        className="absolute inset-0 h-full w-full object-cover opacity-60"
+        className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>

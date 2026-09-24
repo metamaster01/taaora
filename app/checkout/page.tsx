@@ -2,6 +2,7 @@
 
 import { Suspense, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import Image from 'next/image'
 
 declare global {
   interface Window {
@@ -145,8 +146,10 @@ function CheckoutForm() {
 
   return (
     <div className="min-h-screen bg-paper text-ink">
-      <div className="border-b border-hair px-6 py-4">
-        <div className="mx-auto max-w-2xl font-display text-xl">Taaora</div>
+      <div className="border-b border-hair px-6 ">
+        <div className="mx-auto flex max-w-2xl justify-center">
+          <Image src="/logo-removebg.png" alt="Taaora" width={96} height={80} className="h-20 w-24 object-contain" />
+        </div>
       </div>
 
       <main className="mx-auto max-w-2xl px-6 py-12">

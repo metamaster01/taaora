@@ -4,6 +4,10 @@ import Hero from '@/components/Hero'
 import ProductShowcase from '@/components/ProductShowcase'
 import Footer from '@/components/Footer'
 import type { Product } from '@/types/product'
+import ScentJourney from '@/components/ScentJourney';
+import AboutTaaora from '@/components/AboutTaaora';
+import PromoBanner from '@/components/PromoBanner';
+import FaqChat from '@/components/FaqChat';
 
 export const revalidate = 60
 
@@ -21,20 +25,23 @@ export default async function HomePage() {
   const product = await getProduct()
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white">
       <Navbar mode="auto" />
 
       {product ? (
         <>
           <Hero product={product} />
           <ProductShowcase product={product} />
+          <ScentJourney product={product} />
+<PromoBanner product={product} />
         </>
       ) : (
         <div className="flex min-h-screen items-center justify-center bg-[#0A0908] text-[#F4F1EA]">
           <p className="font-display text-xl italic">Imperial Wood — coming soon.</p>
         </div>
       )}
-
+<AboutTaaora />
+<FaqChat />
       <Footer />
     </div>
   )

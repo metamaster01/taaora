@@ -41,6 +41,17 @@ body {
   --font-serif: var(--font-bodoni), serif;
 }
 
+/* @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} */
+
+
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -49,3 +60,9 @@ body {
     scroll-behavior: auto !important;
   }
 }
+ 
+@keyframes typing-pulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.25rem); }
+}
+ 

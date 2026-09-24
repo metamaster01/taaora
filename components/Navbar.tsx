@@ -162,11 +162,13 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 const leftLinks = [
+  // { href: '/products/imperial-wood', label: 'Shop' },
+  { href: '/', label: 'Home' },
   { href: '/#story', label: 'About' },
-  { href: '/products/imperial-wood', label: 'Shop' },
 ]
 
 const rightLinks = [
+  { href: '/products/imperial-wood', label: 'Shop' },
   { href: 'https://wa.me/917558566189', label: 'Contact', external: true },
 ]
 
