@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-hair pt-8 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Taaora Perfumes. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} <a href="https://metamaster.in" target="_blank" rel="noopener noreferrer" className="hover:text-ink transition-colors">MetaMaster</a> . All rights reserved.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {policyLinks.map((l) => (
               <Link key={l.href} href={l.href} className="hover:text-ink transition-colors">
