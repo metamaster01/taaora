@@ -205,8 +205,8 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
 
   return (
     <header className={`${position} top-0 inset-x-0 z-50 transition-colors duration-300 ${bar} ${textColor}`}>
-      <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:py-6">
-        <div className="hidden items-center gap-9 text-sm sm:flex">
+      <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-2 sm:py-2 md:py-8">
+        <div className="hidden items-center gap-9 text-base sm:flex">
           {leftLinks.map((l) => (
             <Link key={l.href} href={l.href} className={navLinkClass}>
               {l.label}
@@ -223,12 +223,12 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
             alt="Taaora"
             width={64}
             height={64}
-            className="h-12 w-12 object-contain sm:h-20 sm:w-24"
+            className="h-18 w-24 object-contain sm:h-18 sm:w-24 md:h-24 md:w-28"
             priority
           />
         </Link>
 
-        <div className="hidden items-center gap-9 text-sm sm:flex">
+        <div className="hidden items-center gap-9 text-base sm:flex">
           {rightLinks.map((l) => (
             <a
               key={l.href}
