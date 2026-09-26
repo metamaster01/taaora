@@ -313,7 +313,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import CursorGlow from './CursorGlow'
+// import CursorGlow from './CursorGlow'
+import SplashCursor from './SplashCursor'
 import type { Product } from '@/types/product'
 
 export default function Hero({ product }: { product: Product }) {
@@ -357,7 +358,22 @@ export default function Hero({ product }: { product: Product }) {
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908] via-[#0A0908]/65 to-[#0A0908]/25" />
-      <CursorGlow />
+      {/* <CursorGlow /> */}
+      {/* <SplashCursor /> */}    
+      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden [&_canvas]:!absolute [&_canvas]:!inset-0 [&_canvas]:!h-full [&_canvas]:!w-full [&_canvas]:!max-w-full [&_canvas]:!max-h-full [&_canvas]:!pointer-events-none">
+        <SplashCursor
+          DENSITY_DISSIPATION={3.5}
+          VELOCITY_DISSIPATION={2}
+          PRESSURE={0.1}
+          CURL={3}
+          SPLAT_RADIUS={0.2}
+          SPLAT_FORCE={6000}
+          COLOR_UPDATE_SPEED={10}
+          SHADING
+          RAINBOW_MODE={false}
+          COLOR="#D4AF37"
+        />
+      </div>
 
       <div className="relative z-10 flex flex-1 items-center">
         <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 pt-24 lg:grid-cols-[1.5fr_1fr] lg:items-start lg:pt-0">
