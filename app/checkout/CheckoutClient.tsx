@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import CheckoutSummary from '@/components/CheckoutSummary'
 import TrustBadges from '@/components/TrustBadges'
 import PaymentMethodSelector, { type PaymentMethod } from '@/components/PaymentMethodSelector'
@@ -159,7 +160,13 @@ export default function CheckoutClient({ product, qty }: { product: Product; qty
       <header className="border-b border-hair px-6 py-4">
         <div className="mx-auto max-w-5xl">
           <Link href="/" className="font-display text-xl">
-            Taaora
+            <Image
+              src="/logo-removebg.png"
+              alt="Taaora"
+              width={128}
+              height={96}
+              className="h-24 w-32 object-contain"
+            />
           </Link>
         </div>
       </header>
