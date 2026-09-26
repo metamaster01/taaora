@@ -28,7 +28,7 @@ export default function AboutTaaora() {
           className="order-2 lg:order-1"
         >
           <p className="text-xs uppercase tracking-[0.2em] text-bronze">About Taaora</p>
-          <p className="mt-4 font-display text-3xl italic leading-snug sm:text-4xl">
+          <p className="mt-4 font-display text-3xl  leading-snug sm:text-4xl">
             Built around a single presence, not a shelf of options.
           </p>
           <p className="mt-6 max-w-md leading-relaxed text-muted">
@@ -52,7 +52,7 @@ export default function AboutTaaora() {
           <motion.div style={{ y }} className="absolute inset-x-0 -top-[8%] h-[116%] w-full">
             {imageError ? (
               <div className="flex h-full w-full items-center justify-center">
-                <span className="font-display text-sm italic text-muted">Photography pending</span>
+                <span className="font-display text-sm text-muted">Photography pending</span>
               </div>
             ) : (
               <Image

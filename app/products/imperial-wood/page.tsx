@@ -46,7 +46,7 @@ export default async function ProductPage() {
             />
           </div>
           <div>
-            <p className="font-display text-2xl italic text-ink">A fragrance made for presence.</p>
+            <p className="font-display text-2xl text-ink">A fragrance made for presence.</p>
             <p className="mt-4 text-muted leading-relaxed">
               Designed for first meetings, important rooms, evening occasions, and everyday confidence —
               Imperial Wood is more than a fragrance. It is part of how you show up.
@@ -58,7 +58,7 @@ export default async function ProductPage() {
       <section className="border-t border-hair">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
-            <p className="font-display text-2xl italic text-ink">A rich, 30% concentration.</p>
+            <p className="font-display text-2xl  text-ink">A rich, 30% concentration.</p>
             <p className="mt-4 text-muted leading-relaxed">
               A smooth, luxurious depth that lasts — blending a sophisticated woody character with warmth
               that settles into your skin rather than sitting on top of it.

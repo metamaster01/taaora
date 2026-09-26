@@ -43,7 +43,7 @@ function SuccessContent() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-paper px-6 text-center text-ink">
-      <p className="font-display text-3xl italic">Thank you.</p>
+      <p className="font-display text-3xl ">Thank you.</p>
       <p className="mt-4 max-w-md text-muted leading-relaxed">
         {isCod ? (
           <>

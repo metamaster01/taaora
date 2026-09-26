@@ -4,7 +4,7 @@ function NoteColumn({ label, notes }: { label: string; notes: string[] | null })
   if (!notes || notes.length === 0) return null
   return (
     <div>
-      <p className="font-display text-lg italic text-ink">{label}</p>
+      <p className="font-display text-lg  text-ink">{label}</p>
       <ul className="mt-3 space-y-1.5 text-sm text-muted">
         {notes.map((note) => (
           <li key={note}>{note}</li>

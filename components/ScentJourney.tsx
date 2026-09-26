@@ -54,7 +54,7 @@ export default function ScentJourney({ product }: { product: Product }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="font-display text-3xl italic"
+          className="font-display text-3xl"
         >
           Three notes, one presence.
         </motion.p>
@@ -79,7 +79,7 @@ export default function ScentJourney({ product }: { product: Product }) {
                   />
                 </div>
                 <p className="mt-5 text-xs uppercase tracking-[0.15em] text-bronze">{card.eyebrow}</p>
-                <p className="mt-2 font-display text-xl italic">{card.title}</p>
+                <p className="mt-2 font-display text-xl ">{card.title}</p>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{card.description}</p>
                 {notes && notes.length > 0 && (
                   <p className="mt-3 text-xs text-muted">{notes.join(', ')}</p>

@@ -396,7 +396,7 @@ export default function Hero({ product }: { product: Product }) {
             {product.tagline && (
               <div className="flex items-start gap-3">
                 <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
-                <p className="font-display text-2xl italic leading-snug sm:text-3xl">
+                <p className="font-display text-2xl  leading-snug sm:text-3xl">
                   {product.tagline}
                 </p>
               </div>
@@ -424,7 +424,7 @@ export default function Hero({ product }: { product: Product }) {
           {product.tagline && (
             <div className="flex items-start gap-2">
               <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bronze" />
-              <p className="font-display text-xl italic leading-snug">{product.tagline}</p>
+              <p className="font-display text-xl  leading-snug">{product.tagline}</p>
             </div>
           )}
           <p className="mt-2 line-clamp-2 text-[14px] leading-relaxed text-[#C9C2B4]">

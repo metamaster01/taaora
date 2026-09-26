@@ -219,10 +219,11 @@ async function getProduct(): Promise<Product | null> {
 export default async function CheckoutPage({
   searchParams,
 }: {
-  searchParams: { qty?: string }
+  searchParams: Promise<{ qty?: string }>
 }) {
   const product = await getProduct()
-  const qty = Math.min(5, Math.max(1, Number(searchParams.qty) || 1))
+  const { qty: requestedQty } = await searchParams
+  const qty = Math.min(5, Math.max(1, Number(requestedQty) || 1))
 
   if (!product) {
     return (

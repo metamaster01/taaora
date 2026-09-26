@@ -30,7 +30,7 @@ export default function CheckoutSummary({ product, qty }: { product: Product; qt
         </div>
         <div className="flex flex-1 flex-col justify-between">
           <div>
-            <p className="font-display text-lg italic text-ink">{product.name}</p>
+            <p className="font-display text-lg  text-ink">{product.name}</p>
             {details && <p className="mt-1 text-xs text-muted">{details}</p>}
           </div>
           <p className="text-sm text-muted">Qty: {qty}</p>

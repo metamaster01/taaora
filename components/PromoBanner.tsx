@@ -44,7 +44,7 @@ export default function PromoBanner({ product }: { product: Product }) {
         >
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-bronze">Limited time</p>
-            <p className="mt-2 font-display text-3xl italic sm:text-4xl">
+            <p className="mt-2 font-display text-3xl sm:text-4xl">
               Save {formatRupees(savingsPaise)} on Imperial Wood
             </p>
             <p className="mt-2 text-sm text-[#C9C2B4]">

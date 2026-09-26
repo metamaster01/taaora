@@ -31,7 +31,7 @@ export default function ProductShowcase({ product }: { product: Product }) {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <p className="font-display text-3xl italic text-ink">{product.name}</p>
+          <p className="font-display text-3xl  text-ink">{product.name}</p>
           {product.description && (
             <p className="mt-4 max-w-md text-muted leading-relaxed">{product.description}</p>
           )}

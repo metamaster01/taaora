@@ -527,7 +527,7 @@ export default function FaqChat() {
   return (
     <section className="bg-paper px-4 py-28 text-ink sm:py-36">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-20 text-center">
-        <h2 className="font-display text-[clamp(2.25rem,7vw,4.5rem)] uppercase italic leading-[0.95] tracking-tight">
+        <h2 className="font-display text-[clamp(2.25rem,7vw,4.5rem)] uppercase leading-[0.95] tracking-tight">
           Your questions,
           <br />
           answered.

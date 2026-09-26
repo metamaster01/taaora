@@ -37,7 +37,7 @@ export default async function HomePage() {
         </>
       ) : (
         <div className="flex min-h-screen items-center justify-center bg-[#0A0908] text-[#F4F1EA]">
-          <p className="font-display text-xl italic">Imperial Wood — coming soon.</p>
+          <p className="font-display text-xl ">Imperial Wood — coming soon.</p>
         </div>
       )}
 <AboutTaaora />
