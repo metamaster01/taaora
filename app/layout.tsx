@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter, Bodoni_Moda } from 'next/font/google'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -31,7 +32,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable} ${bodoni.variable}`}>
-      <body className="font-sans text-ink antialiased">{children}</body>
+      
+      <body className="font-sans text-ink antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
