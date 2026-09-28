@@ -219,7 +219,7 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
           className="transition-transform duration-300 hover:scale-105 sm:absolute sm:left-1/2 sm:-translate-x-1/2"
         >
           <Image
-            src="/logo-removebg.png"
+            src="/logo-removebg-2.png"
             alt="Taaora"
             width={64}
             height={64}

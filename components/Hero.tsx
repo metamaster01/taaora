@@ -325,7 +325,7 @@ export default function Hero({ product }: { product: Product }) {
     label,
     image:
       i === 0
-        ? '/hero-image-1.jpg'
+        ? '/hero-image-3.jpeg'
         : i === notes.length - 1
           ? '/image-2.webp'
           : null,
@@ -355,7 +355,7 @@ export default function Hero({ product }: { product: Product }) {
         poster="/image-poster-2.png"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src="/hero-video-2.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908] via-[#0A0908]/65 to-[#0A0908]/25" />
       {/* <CursorGlow /> */}
