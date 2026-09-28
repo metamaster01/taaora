@@ -30,7 +30,7 @@ export default function Footer() {
             <p className="mt-4 font-display text-lg italic">Taaora — Wear Your Presence.</p>
             <p className="mt-4 max-w-xs text-sm text-muted">
               {/* TODO: replace with your real business address */}
-              Add your business address here
+              Nagpur, Maharashtra, India
             </p>
           </div>
 
