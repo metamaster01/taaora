@@ -65,6 +65,8 @@ export default function Footer() {
                   taaoraperfumes@gmail.com
                 </a>
               </li>
+
+              
             </ul>
           </div>
         </div>
