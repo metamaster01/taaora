@@ -8,6 +8,9 @@ import ScentJourney from '@/components/ScentJourney';
 import AboutTaaora from '@/components/AboutTaaora';
 import PromoBanner from '@/components/PromoBanner';
 import FaqChat from '@/components/FaqChat';
+import CtaSection from '@/components/CtaSection';
+import TrustSignals from '@/components/TrustSignals';
+import Testimonials from '@/components/Testimonials';
 
 export const revalidate = 60
 
@@ -32,6 +35,7 @@ export default async function HomePage() {
         <>
           <Hero product={product} />
           <ProductShowcase product={product} />
+<AboutTaaora />
           <ScentJourney product={product} />
 <PromoBanner product={product} />
         </>
@@ -40,8 +44,11 @@ export default async function HomePage() {
           <p className="font-display text-xl ">Imperial Wood — coming soon.</p>
         </div>
       )}
-<AboutTaaora />
+
+      <Testimonials />
 <FaqChat />
+<TrustSignals />
+<CtaSection />
       <Footer />
     </div>
   )

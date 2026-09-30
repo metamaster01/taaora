@@ -329,7 +329,6 @@ const faqs: Faq[] = [
       "It's worn the same way by everyone, as their own signature.",
     ],
   },
-  /* Commented out to keep the section to 4 questions — uncomment to restore.
   {
     id: 'delivery',
     question: 'How long does delivery take?',
@@ -339,34 +338,33 @@ const faqs: Faq[] = [
       'Metro cities are usually quicker.',
     ],
   },
-  */
-  {
-    id: 'returns',
-    question: 'Can I return or exchange it?',
-    answer: [
-      "We can't accept returns once the seal is opened, for hygiene reasons.",
-      "If it arrives damaged, message us within 48 hours — full details in our Refund Policy.",
-    ],
-  },
-  {
-    id: 'payment',
-    question: 'Do you offer Cash on Delivery?',
-    answer: [
-      'Yes — Cash on Delivery is available, alongside prepaid checkout.',
-      'Prepaid orders go through Razorpay: cards, UPI, netbanking, and wallets.',
-    ],
-  },
-  /* Commented out to keep the section to 4 questions — uncomment to restore.
+  
+  // {
+  //   id: 'returns',
+  //   question: 'Can I return or exchange it?',
+  //   answer: [
+  //     "We can't accept returns once the seal is opened, for hygiene reasons.",
+  //     "If it arrives damaged, message us within 48 hours — full details in our Refund Policy.",
+  //   ],
+  // },
+  // {
+  //   id: 'payment',
+  //   question: 'Do you offer Cash on Delivery?',
+  //   answer: [
+  //     'Yes — Cash on Delivery is available, alongside prepaid checkout.',
+  //     'Prepaid orders go through Razorpay: cards, UPI, netbanking, and wallets.',
+  //   ],
+  // },
+  
   {
     id: 'contact',
     question: 'How do I reach you with a question?',
     answer: [
       'WhatsApp is fastest — message us directly and we typically reply within a few hours.',
       'You can also email taaoraperfumes@gmail.com any time.',
-      "We're a small team, but we read everything ourselves.",
     ],
   },
-  */
+  
 ]
 
 export default function FaqChat() {

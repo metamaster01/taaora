@@ -18,7 +18,7 @@ export default function AboutTaaora() {
   const y = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
 
   return (
-    <section ref={containerRef} className="overflow-hidden bg-paper py-16 text-ink lg:py-20">
+    <section ref={containerRef} id="about" className="overflow-hidden bg-paper py-16 text-ink lg:py-20">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -56,7 +56,7 @@ export default function AboutTaaora() {
               </div>
             ) : (
               <Image
-                src="/about-2.webp"
+                src="/about-3.jpeg"
                 alt="About Taaora"
                 fill
                 onError={() => setImageError(true)}

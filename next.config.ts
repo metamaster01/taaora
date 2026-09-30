@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
         hostname: "tpizcidmvotuzjkhlioy.supabase.co",
       },
     ],
-    unoptimized: true,
+    formats : ["image/avif", "image/webp"],
+
   },
 };
 

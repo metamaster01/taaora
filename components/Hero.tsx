@@ -353,14 +353,14 @@ export default function Hero({ product }: { product: Product }) {
         loop
         playsInline
         poster="/image-poster-2.png"
-        className="absolute inset-0 h-full w-full object-cover opacity-60"
+        className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/hero-video-2.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908] via-[#0A0908]/65 to-[#0A0908]/25" />
       {/* <CursorGlow /> */}
       {/* <SplashCursor /> */}    
-      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden [&_canvas]:!absolute [&_canvas]:!inset-0 [&_canvas]:!h-full [&_canvas]:!w-full [&_canvas]:!max-w-full [&_canvas]:!max-h-full [&_canvas]:!pointer-events-none">
+      {/* <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden [&_canvas]:!absolute [&_canvas]:!inset-0 [&_canvas]:!h-full [&_canvas]:!w-full [&_canvas]:!max-w-full [&_canvas]:!max-h-full [&_canvas]:!pointer-events-none">
         <SplashCursor
           DENSITY_DISSIPATION={3.5}
           VELOCITY_DISSIPATION={2}
@@ -373,10 +373,10 @@ export default function Hero({ product }: { product: Product }) {
           RAINBOW_MODE={false}
           COLOR="#D4AF37"
         />
-      </div>
+      </div> */}
 
       <div className="relative z-10 flex flex-1 items-center">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 pt-24 lg:grid-cols-[1.5fr_1fr] lg:items-start lg:pt-0">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-16 px-6 pt-24 lg:grid-cols-[1.75fr_1fr] lg:items-start lg:pt-0">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -393,15 +393,17 @@ export default function Hero({ product }: { product: Product }) {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="hidden max-w-xs lg:block lg:pt-3"
           >
-            {product.tagline && (
+            {/* {product.tagline && (
               <div className="flex items-start gap-3">
                 <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
                 <p className="font-display text-2xl  leading-snug sm:text-3xl">
                   {product.tagline}
                 </p>
               </div>
-            )}
-            <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-[#C9C2B4]">{product.description}</p>
+            )} */}
+            <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-[#C9C2B4]">
+              A refined unisex Eau de Parfum with a rich 30% fragrance concentration, blending sophisticated woods with smooth, luxurious depth. Made for lasting impressions and everyday confidence.
+            </p>
             <Link
               href={`/products/${product.slug}`}
               className="mt-6 inline-block rounded-full bg-[#F4F1EA] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-[#0A0908] transition-all duration-300 hover:scale-105 hover:opacity-90"
