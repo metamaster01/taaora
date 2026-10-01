@@ -314,7 +314,7 @@ import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 // import CursorGlow from './CursorGlow'
-import SplashCursor from './SplashCursor'
+// import SplashCursor from './SplashCursor'
 import type { Product } from '@/types/product'
 
 export default function Hero({ product }: { product: Product }) {
@@ -441,7 +441,7 @@ export default function Hero({ product }: { product: Product }) {
         </div>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}
@@ -456,12 +456,12 @@ export default function Hero({ product }: { product: Product }) {
             className="h-1.5 w-1.5 rounded-full bg-bronze"
           />
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Notes strip — desktop only (hidden below lg), and the connecting line is
           now bottom-aligned with a fixed offset so it runs through the text's
           vertical center instead of floating above it. */}
-      {stripItems.length > 0 && (
+      {/* {stripItems.length > 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -495,7 +495,7 @@ export default function Hero({ product }: { product: Product }) {
             })}
           </div>
         </motion.div>
-      )}
+      )} */}
     </section>
   )
 }
