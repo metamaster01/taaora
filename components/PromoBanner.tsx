@@ -40,9 +40,9 @@ export default function PromoBanner({ product }: { product: Product }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between"
+          className="flex items-center justify-center sm:justify-between"
         >
-          <div>
+          <div className="hidden sm:block">
             <p className="text-xs uppercase tracking-[0.2em] text-bronze">Limited time</p>
             <p className="mt-2 font-display text-3xl sm:text-4xl">
               Save {formatRupees(savingsPaise)} on Imperial Wood
@@ -55,7 +55,7 @@ export default function PromoBanner({ product }: { product: Product }) {
 
           <Link
             href={`/products/${product.slug}`}
-            className="inline-block shrink-0 rounded-full bg-[#F4F1EA] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-[#0A0908] transition-all duration-300 hover:scale-105 hover:opacity-90"
+            className="mx-auto inline-block shrink-0 rounded-full bg-[#F4F1EA] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-[#0A0908] transition-all duration-300 hover:scale-105 hover:opacity-90 sm:mx-0"
           >
             Shop now
           </Link>

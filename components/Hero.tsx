@@ -376,12 +376,12 @@ export default function Hero({ product }: { product: Product }) {
       </div> */}
 
       <div className="relative z-10 flex flex-1 items-center">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-16 px-6 pt-24 lg:grid-cols-[1.75fr_1fr] lg:items-start lg:pt-0">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-14 px-6 pt-24 lg:grid-cols-[1.75fr_1fr] lg:items-start lg:pt-0">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="max-w-2xl font-display text-5xl font-medium leading-[1.1] sm:text-6xl lg:text-7xl"
+            className="max-w-2xl font-display text-5xl font-medium leading-[1.1] sm:text-5xl lg:text-7xl"
           >
             Wear a fragrance that becomes your presence.
           </motion.h1>
@@ -401,14 +401,20 @@ export default function Hero({ product }: { product: Product }) {
                 </p>
               </div>
             )} */}
-            <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-[#C9C2B4]">
-              A refined unisex Eau de Parfum with a rich 30% fragrance concentration, blending sophisticated woods with smooth, luxurious depth. Made for lasting impressions and everyday confidence.
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#D4AF37]">
+              A limited-time offer
+            </p>
+            <p className="mt-3 font-display text-2xl leading-snug text-[#F4F1EA]">
+              Make Imperial Wood your signature.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-[#C9C2B4]">
+              Save ₹400 on a bold, lasting fragrance. Now ₹1,099, down from ₹1,499.
             </p>
             <Link
               href={`/products/${product.slug}`}
               className="mt-6 inline-block rounded-full bg-[#F4F1EA] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-[#0A0908] transition-all duration-300 hover:scale-105 hover:opacity-90"
             >
-              Shop now
+              Discover Imperial Wood
             </Link>
           </motion.div>
         </div>
@@ -423,14 +429,19 @@ export default function Hero({ product }: { product: Product }) {
         className="relative z-10 mt-auto px-6 pb-24 lg:hidden"
       >
         <div className="max-w-[340px]">
-          {product.tagline && (
+          {/* {product.tagline && (
             <div className="flex items-start gap-2">
               <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bronze" />
               <p className="font-display text-xl  leading-snug">{product.tagline}</p>
             </div>
-          )}
-          <p className="mt-2 line-clamp-2 text-[14px] leading-relaxed text-[#C9C2B4]">
-            {product.description}
+          )} */}
+          <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#D4AF37]">
+            Limited-time offer
+          </p>
+          <p className="mt-2 text-[14px] leading-relaxed text-[#C9C2B4]">
+            Save ₹400 on Imperial Wood.<br />
+            Now ₹1,099 instead of ₹1,499.<br />
+            Bold, lasting fragrance — 27% off.
           </p>
           <Link
             href={`/products/${product.slug}`}
