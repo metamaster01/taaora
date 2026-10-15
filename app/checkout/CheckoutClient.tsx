@@ -481,6 +481,7 @@ import ProcessingOverlay from '@/components/ProcessingOverlay'
 import { preloadLottie } from '@/components/LottiePlayer'
 import type { Product } from '@/types/product'
 import Image from 'next/image'
+import { trackInitiateCheckout, trackPurchase } from '@/lib/meta-pixel'
 
 declare global {
   interface Window {
@@ -536,6 +537,16 @@ export default function CheckoutClient({ product, qty }: { product: Product; qty
     preloadLottie('/process-complete.json')
   }, [router])
 
+
+    // Meta Pixel: customer reached checkout
+  useEffect(() => {
+    trackInitiateCheckout({
+      id: product.id,
+      value: product.sale_price_paise * qty, // ← use your real price field name
+      numItems: qty,
+    })
+  }, [product.id, qty])
+
   function update(field: keyof FormState, value: string) {
     setForm((f) => ({ ...f, [field]: value }))
     if (errors[field]) setErrors((e) => ({ ...e, [field]: undefined }))
@@ -554,7 +565,32 @@ export default function CheckoutClient({ product, qty }: { product: Product; qty
     return Object.keys(next).length === 0
   }
 
-  function goToSuccess(orderNumber: string, method: 'cod' | 'online') {
+  // function goToSuccess(orderNumber: string, method: 'cod' | 'online') {
+  //   setShowProcessing(true)
+  //   window.setTimeout(() => {
+  //     router.push(`/checkout/success?order=${orderNumber}&method=${method}`)
+  //   }, PROCESSING_DELAY_MS)
+  // }
+
+
+    // Amount in rupees. Razorpay's amount is in paise, hence / 100.
+  const orderValue = (d: { amount?: number }) =>
+    typeof d.amount === 'number' ? d.amount / 100 : product.sale_price_paise * qty // ← match your price field
+
+  function goToSuccess(orderNumber: string, method: 'cod' | 'online', value: number) {
+    // Meta Pixel: fires once per order, even if the page is refreshed
+    trackPurchase({
+      orderId: orderNumber,
+      value,
+      contentIds: [product.id],
+      numItems: qty,
+      user: {
+        email: form.email,
+        phone: form.phone,
+        firstName: form.name.trim().split(' ')[0],
+      },
+    })
+
     setShowProcessing(true)
     window.setTimeout(() => {
       router.push(`/checkout/success?order=${orderNumber}&method=${method}`)
@@ -594,7 +630,7 @@ export default function CheckoutClient({ product, qty }: { product: Product; qty
       }
 
       if (paymentMethod === 'cod') {
-        goToSuccess(data.orderNumber, 'cod')
+        goToSuccess(data.orderNumber, 'cod', orderValue(data))
         return
       }
 
@@ -618,7 +654,7 @@ export default function CheckoutClient({ product, qty }: { product: Product; qty
           // The frontend redirect is never the source of truth — the webhook
           // confirms payment server-side. This just bridges the customer to
           // the "we've got it" screen.
-          goToSuccess(data.orderNumber, 'online')
+          goToSuccess(data.orderNumber, 'online', orderValue(data))
         },
         modal: {
           ondismiss: () => setSubmitting(false),

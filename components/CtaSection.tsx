@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
+import { trackContact } from '@/lib/meta-pixel';
 
 const SHOP_URL = '/products/imperial-wood'
 const WHATSAPP_URL =
@@ -96,6 +97,7 @@ export default function CtaSection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContact('whatsapp')}
               className={`${buttonBase} border border-[#F4F1EA]/30 text-[#F4F1EA] hover:border-[#F4F1EA]/70 hover:bg-[#F4F1EA]/5 lg:min-w-[240px]`}
             >
               <WhatsAppIcon className="h-5 w-5" />

@@ -294,6 +294,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Menu, X, ShoppingBag } from 'lucide-react'
+import { trackContact } from '@/lib/meta-pixel';
 
 const WHATSAPP_URL = 'https://wa.me/917558566189'
 
@@ -409,6 +410,7 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
               className={iconBtn}
+              onClick={() => trackContact('whatsapp')}
             >
               <WhatsAppIcon className="h-[22px] w-[22px]" />
             </a>
