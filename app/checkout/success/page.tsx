@@ -203,12 +203,13 @@ import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Mail, Truck, CreditCard, Banknote } from 'lucide-react'
+import { Mail, Truck, CreditCard, Banknote, Package } from 'lucide-react'
 import LottiePlayer from '@/components/LottiePlayer'
 
 const steps = [
   { icon: Mail, label: 'Confirmation email sent' },
   { icon: Truck, label: "We'll notify you once it ships" },
+  { icon: Package, label: 'Your order will be delivered in 4–5 days' },
 ]
 
 function SuccessContent() {
