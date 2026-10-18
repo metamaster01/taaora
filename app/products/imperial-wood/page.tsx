@@ -7,6 +7,8 @@ import NotesSection from '@/components/NoteSection'
 import Footer from '@/components/Footer'
 import type { Product } from '@/types/product'
 import TrackViewContent from '@/components/TrackViewContent';
+import Testimonials from '@/components/Testimonials'
+import TrustSignals from '@/components/TrustSignals'
 
 export const revalidate = 60 // re-check stock/price every minute
 
@@ -78,6 +80,9 @@ export default async function ProductPage() {
       <div className="border-t border-hair">
         <NotesSection product={product} />
       </div>
+      <Testimonials />
+      <TrustSignals />
+
 
 
       <TrackViewContent id={product.id} name={product.name} price={product.sale_price_paise} />
