@@ -287,29 +287,215 @@
 
 
 
+// 'use client'
+
+// import Link from 'next/link'
+// import Image from 'next/image'
+// import { usePathname } from 'next/navigation'
+// import { useEffect, useState } from 'react'
+// import { Menu, X, ShoppingBag } from 'lucide-react'
+// import { trackContact } from '@/lib/meta-pixel';
+
+// const WHATSAPP_URL = 'https://wa.me/917558566189'
+
+// const leftLinks = [
+//   { href: '/', label: 'Home' },
+//   { href: '/#about', label: 'About' },
+// ]
+
+// const rightLinks = [
+//   { href: '/products/imperial-wood', label: 'Shop' },
+//   { href: WHATSAPP_URL, label: 'Contact', external: true },
+// ]
+
+// const navLinkClass =
+//   'relative inline-block after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full'
+
+// // lucide has no brand icons, so here's the WhatsApp glyph as an inline SVG
+// function WhatsAppIcon({ className = '' }: { className?: string }) {
+//   return (
+//     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+//       <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.21 4.24-9.45 9.46-9.45 2.52 0 4.9.99 6.68 2.77a9.4 9.4 0 0 1 2.76 6.69c0 5.21-4.25 9.45-9.42 9.45zM20.52 3.45A11.4 11.4 0 0 0 12.05 0C5.73 0 .59 5.14.59 11.46c0 2.02.53 3.99 1.53 5.73L.5 23.5l6.47-1.7a11.44 11.44 0 0 0 5.08 1.2h.01c6.32 0 11.46-5.14 11.46-11.46 0-3.06-1.19-5.94-3.35-8.09z" />
+//     </svg>
+//   )
+// }
+
+// export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) {
+//   const [scrolled, setScrolled] = useState(false)
+//   const [menuOpen, setMenuOpen] = useState(false)
+//   const pathname = usePathname()
+
+//   useEffect(() => {
+//     const onScroll = () => setScrolled(window.scrollY > 60)
+//     onScroll()
+//     window.addEventListener('scroll', onScroll, { passive: true })
+//     return () => window.removeEventListener('scroll', onScroll)
+//   }, [])
+
+//   // close the menu on route change
+//   useEffect(() => {
+//     setMenuOpen(false)
+//   }, [pathname])
+
+//   // lock page scroll while the mobile menu is open
+//   useEffect(() => {
+//     document.body.style.overflow = menuOpen ? 'hidden' : ''
+//     return () => {
+//       document.body.style.overflow = ''
+//     }
+//   }, [menuOpen])
+
+//   // stay solid whenever the mobile menu is open so links are always readable
+//   const transparent = mode === 'auto' && !scrolled && !menuOpen
+//   const textColor = transparent ? 'text-[#F4F1EA]' : 'text-ink'
+//   const bar = transparent
+//     ? 'bg-black/30 border-b border-transparent backdrop-blur-lg'
+//     : 'bg-paper/95 backdrop-blur-sm border-b border-hair'
+
+//   // fixed on the homepage so the hero video fills the viewport under the nav
+//   const position = mode === 'auto' ? 'fixed' : 'sticky'
+
+//   const iconBtn =
+//     'flex h-10 w-10 items-center justify-center rounded-full transition-opacity active:scale-95 hover:opacity-70'
+
+//   return (
+//     <header className={`${position} top-0 inset-x-0 z-50 transition-colors duration-300 ${bar} ${textColor}`}>
+//       <nav className="relative mx-auto grid max-w-6xl grid-cols-3 items-center px-3 py-1.5 sm:flex sm:justify-between sm:px-6 sm:py-2 md:py-8">
+//         {/* LEFT: menu icon (mobile) / links (desktop) */}
+//         <div className="flex items-center justify-self-start">
+//           <button
+//             onClick={() => setMenuOpen((o) => !o)}
+//             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+//             aria-expanded={menuOpen}
+//             aria-controls="mobile-menu"
+//             className={`${iconBtn} sm:hidden`}
+//           >
+//             {menuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
+//           </button>
+
+//           <div className="hidden items-center gap-9 text-base sm:flex">
+//             {leftLinks.map((l) => (
+//               <Link key={l.href} href={l.href} className={navLinkClass}>
+//                 {l.label}
+//               </Link>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* CENTER: logo */}
+//         <Link
+//           href="/"
+//           aria-label="Taaora home"
+//           className="justify-self-center transition-transform duration-300 hover:scale-105 sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+//         >
+//           <Image
+//             src="/logo-3.png"
+//             alt="Taaora"
+//             width={112}
+//             height={96}
+//             className="h-14 w-20 object-contain sm:h-20 sm:w-26 md:h-24 md:w-28"
+//             priority
+//           />
+//         </Link>
+
+//         {/* RIGHT: shop + whatsapp icons (mobile) / links (desktop) */}
+//         <div className="flex items-center justify-self-end">
+//           <div className="flex items-center sm:hidden">
+//             <Link href="/products/imperial-wood" aria-label="Shop" className={iconBtn}>
+//               <ShoppingBag size={22} strokeWidth={1.5} />
+//             </Link>
+//             <a
+//               href={WHATSAPP_URL}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               aria-label="Chat on WhatsApp"
+//               className={iconBtn}
+//               onClick={() => trackContact('whatsapp')}
+//             >
+//               <WhatsAppIcon className="h-[22px] w-[22px]" />
+//             </a>
+//           </div>
+
+//           <div className="hidden items-center gap-9 text-base sm:flex">
+//             {rightLinks.map((l) => (
+//               <a
+//                 key={l.href}
+//                 href={l.href}
+//                 target={l.external ? '_blank' : undefined}
+//                 rel={l.external ? 'noopener noreferrer' : undefined}
+//                 className={navLinkClass}
+//               >
+//                 {l.label}
+//               </a>
+//             ))}
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* MOBILE MENU: smooth slide-down */}
+//       <div
+//         id="mobile-menu"
+//         className={`grid transition-[grid-template-rows] duration-300 ease-out sm:hidden ${
+//           menuOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+//         }`}
+//       >
+//         <div className="overflow-hidden">
+//           <div className="border-t border-hair bg-paper px-6 py-8 text-ink">
+//             <div className="flex flex-col gap-6 text-lg tracking-wide">
+//               {[...leftLinks, ...rightLinks].map((l) =>
+//                 'external' in l && l.external ? (
+//                   <a
+//                     key={l.href}
+//                     href={l.href}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     onClick={() => setMenuOpen(false)}
+//                   >
+//                     {l.label}
+//                   </a>
+//                 ) : (
+//                   <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)}>
+//                     {l.label}
+//                   </Link>
+//                 )
+//               )}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </header>
+//   )
+// }
+
+
+
+
+
+
 'use client'
 
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Menu, X, ShoppingBag } from 'lucide-react'
-import { trackContact } from '@/lib/meta-pixel';
+import { Menu, X, ShoppingBag, Truck } from 'lucide-react'
+import { trackContact } from '@/lib/meta-pixel'
 
 const WHATSAPP_URL = 'https://wa.me/917558566189'
 
+// DESKTOP: Home · About · Shop  —  [logo]  —  Track Order · (WhatsApp icon)
 const leftLinks = [
   { href: '/', label: 'Home' },
   { href: '/#about', label: 'About' },
-]
-
-const rightLinks = [
   { href: '/products/imperial-wood', label: 'Shop' },
-  { href: WHATSAPP_URL, label: 'Contact', external: true },
 ]
 
+const TRACK_HREF = '/track'
+
+// Desktop links: small, uppercase, widely tracked — this is what makes the
+// text feel balanced next to the logo instead of looking oversized or plain.
 const navLinkClass =
-  'relative inline-block after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full'
+  'relative inline-block text-[13px] font-medium uppercase tracking-[0.2em] after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-current after:transition-all after:duration-300 hover:after:w-full'
 
 // lucide has no brand icons, so here's the WhatsApp glyph as an inline SVG
 function WhatsAppIcon({ className = '' }: { className?: string }) {
@@ -355,27 +541,52 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
   // fixed on the homepage so the hero video fills the viewport under the nav
   const position = mode === 'auto' ? 'fixed' : 'sticky'
 
+  // Underline stays visible on the page you're currently on (hash links never match).
+  const isActive = (href: string) =>
+    !href.includes('#') && (href === '/' ? pathname === '/' : pathname.startsWith(href))
+  const underline = (href: string) => (isActive(href) ? 'after:w-full' : 'after:w-0')
+
   const iconBtn =
     'flex h-10 w-10 items-center justify-center rounded-full transition-opacity active:scale-95 hover:opacity-70'
 
+  const mobileLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/#about', label: 'About' },
+    { href: '/products/imperial-wood', label: 'Shop' },
+    { href: TRACK_HREF, label: 'Track Order' },
+    { href: WHATSAPP_URL, label: 'Contact', external: true },
+  ]
+
   return (
     <header className={`${position} top-0 inset-x-0 z-50 transition-colors duration-300 ${bar} ${textColor}`}>
-      <nav className="relative mx-auto grid max-w-6xl grid-cols-3 items-center px-3 py-1.5 sm:flex sm:justify-between sm:px-6 sm:py-2 md:py-8">
-        {/* LEFT: menu icon (mobile) / links (desktop) */}
-        <div className="flex items-center justify-self-start">
-          <button
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-            className={`${iconBtn} sm:hidden`}
-          >
-            {menuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
-          </button>
+      {/* FUTURE: announcement bar goes here — see the notes at the bottom of this file */}
 
-          <div className="hidden items-center gap-9 text-base sm:flex">
+      <nav className="relative mx-auto grid max-w-6xl grid-cols-3 items-center px-3 py-6 sm:flex sm:justify-between sm:px-6 sm:py-4 md:py-6">
+        {/* LEFT: menu + track icons (mobile) / links (desktop) */}
+        <div className="flex items-center justify-self-start">
+          <div className="flex items-center sm:hidden">
+            <button
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+              className={iconBtn}
+            >
+              {menuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
+            </button>
+            <Link
+              href={TRACK_HREF}
+              aria-label="Track your order"
+              aria-current={isActive(TRACK_HREF) ? 'page' : undefined}
+              className={iconBtn}
+            >
+              <Truck size={22} strokeWidth={1.5} />
+            </Link>
+          </div>
+
+          <div className="hidden items-center gap-10 sm:flex">
             {leftLinks.map((l) => (
-              <Link key={l.href} href={l.href} className={navLinkClass}>
+              <Link key={l.href} href={l.href} className={`${navLinkClass} ${underline(l.href)}`}>
                 {l.label}
               </Link>
             ))}
@@ -393,12 +604,12 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
             alt="Taaora"
             width={112}
             height={96}
-            className="h-14 w-20 object-contain sm:h-20 sm:w-26 md:h-24 md:w-28"
+            className="h-14 w-20 object-contain sm:h-16 sm:w-24 md:h-[72px] md:w-28"
             priority
           />
         </Link>
 
-        {/* RIGHT: shop + whatsapp icons (mobile) / links (desktop) */}
+        {/* RIGHT: shop + whatsapp icons (mobile) / track + whatsapp (desktop) */}
         <div className="flex items-center justify-self-end">
           <div className="flex items-center sm:hidden">
             <Link href="/products/imperial-wood" aria-label="Shop" className={iconBtn}>
@@ -413,21 +624,27 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
               onClick={() => trackContact('whatsapp')}
             >
               <WhatsAppIcon className="h-[22px] w-[22px]" />
+              
             </a>
           </div>
 
-          <div className="hidden items-center gap-9 text-base sm:flex">
-            {rightLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                target={l.external ? '_blank' : undefined}
-                rel={l.external ? 'noopener noreferrer' : undefined}
-                className={navLinkClass}
-              >
-                {l.label}
-              </a>
-            ))}
+          <div className="hidden items-center gap-8 sm:flex">
+            <Link href={TRACK_HREF} className={`${navLinkClass} ${underline(TRACK_HREF)}`}>
+              Track Order
+            </Link>
+            {/* Contact lives on as an icon, so WhatsApp stays one click away on desktop */}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              title="Chat on WhatsApp"
+              className="inline-flex h-9 shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-current/25 px-3 transition-colors hover:border-current"
+              onClick={() => trackContact('whatsapp')}
+            >
+              <WhatsAppIcon className="h-[18px] w-[18px]" />
+              <span className="text-sm font-medium">WhatsApp Us</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -442,14 +659,17 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
         <div className="overflow-hidden">
           <div className="border-t border-hair bg-paper px-6 py-8 text-ink">
             <div className="flex flex-col gap-6 text-lg tracking-wide">
-              {[...leftLinks, ...rightLinks].map((l) =>
-                'external' in l && l.external ? (
+              {mobileLinks.map((l) =>
+                 l.external ? (
                   <a
                     key={l.href}
                     href={l.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => {
+                      setMenuOpen(false)
+                      trackContact('whatsapp')
+                    }}
                   >
                     {l.label}
                   </a>
@@ -466,3 +686,53 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
     </header>
   )
 }
+
+/* ============================================================================
+   FUTURE: ANNOUNCEMENT BAR  (Diwali offer, free-shipping banner, etc.)
+   Not enabled yet — nothing here runs. Notes for when we build it:
+
+   WHY ONE HEADER, NOT TWO NAVBARS
+   Put the bar INSIDE this <header>, above <nav>. The header is already
+   fixed/sticky, so the bar and nav move together and never overlap. Two
+   separate fixed navbars would need hand-tuned `top` offsets and break the
+   transparent-over-hero effect on the homepage.
+
+   LOOK
+   - Height ~32px (h-8), 11px uppercase text, tracking-[0.2em]
+   - bg-ink + text-paper (or bronze) so it reads as a distinct strip
+   - Infinite marquee: render the message list TWICE and translate -50%, so
+     the loop is seamless. Pause on hover; disable for prefers-reduced-motion.
+   - Dismissible (X) — remember with sessionStorage so it doesn't nag.
+   - Drive the text from one config constant so changing an offer = 1 line.
+
+   JSX (place where the FUTURE comment is, above <nav>):
+
+     {announcement.enabled && (
+       <div className="group relative flex h-8 items-center overflow-hidden bg-ink text-[11px] uppercase tracking-[0.2em] text-paper">
+         <div className="flex w-max animate-[marquee_28s_linear_infinite] whitespace-nowrap group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+           {[0, 1].map((n) => (
+             <div key={n} className="flex shrink-0 items-center" aria-hidden={n === 1}>
+               {announcement.messages.map((m) => (
+                 <span key={m} className="px-8">{m} <span className="px-8 text-bronze">✦</span></span>
+               ))}
+             </div>
+           ))}
+         </div>
+       </div>
+     )}
+
+   CSS (app/globals.css):
+
+     @keyframes marquee { to { transform: translateX(-50%); } }
+
+   CONFIG (e.g. lib/config.ts):
+
+     export const announcement = {
+       enabled: false,
+       messages: ['Diwali offer — extra 10% off', 'Free shipping on prepaid orders'],
+     }
+
+   GOTCHA: the homepage nav is `fixed`, so the hero doesn't move down when
+   the bar appears. Add ~32px (pt-8) to the hero's inner content wrapper
+   while the bar is enabled so the headline isn't tucked under it.
+   ============================================================================ */

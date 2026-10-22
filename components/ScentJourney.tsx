@@ -115,7 +115,7 @@ const cards: NoteCard[] = [
     title: "Fresh Citrus & Aromatic Spices",
     description:
       "The first impression — a bright citrus burst layered with warm spice, awakening the senses the moment it settles on skin.",
-    image: "/notes/note-1.jpg",
+    image: "/notes/note-1.webp",
   },
   {
     key: "heart",
@@ -123,7 +123,7 @@ const cards: NoteCard[] = [
     title: "Aromatic Woods & Warm Florals",
     description:
       "As it settles, aromatic woods intertwine with soft florals and gentle spice — the true character of the fragrance begins to unfold.",
-    image: "/notes/note-2.jpg",
+    image: "/notes/note-2.webp",
   },
   {
     key: "base",
@@ -131,7 +131,7 @@ const cards: NoteCard[] = [
     title: "Rich Woods, Amber & Musk",
     description:
       "The lasting impression — deep woods, warm amber and soft musk that linger for hours, the signature that stays with you.",
-    image: "/notes/note-3.png",
+    image: "/notes/note-3.webp",
   },
 ];
 

@@ -11,6 +11,7 @@ import FaqChat from '@/components/FaqChat';
 import CtaSection from '@/components/CtaSection';
 import TrustSignals from '@/components/TrustSignals';
 import Testimonials from '@/components/Testimonials';
+// import PerfumeScroll from '@/components/PerfumeScroll';
 
 export const revalidate = 60
 
@@ -35,6 +36,7 @@ export default async function HomePage() {
         <>
           <Hero product={product} />
           <ProductShowcase product={product} />
+          {/* <PerfumeScroll /> */}
 <AboutTaaora />
           <ScentJourney product={product} />
 <PromoBanner product={product} />
