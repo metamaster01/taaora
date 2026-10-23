@@ -182,6 +182,7 @@ export default function ScentJourney({ product }: { product: Product }) {
                     quality={75}
                     loading="eager"
                     className="object-cover transition-transform duration-700 ease-out [@media(hover:hover)]:hover:scale-105"
+                    unoptimized
                   />
                 </div>
 
