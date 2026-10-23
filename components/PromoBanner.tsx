@@ -14,7 +14,7 @@ export default function PromoBanner({ product }: { product: Product }) {
   const percentOff = Math.round((savingsPaise / product.regular_price_paise) * 100)
 
   return (
-    <section className="relative flex h-72 items-center overflow-hidden bg-white text-[#F4F1EA] sm:h-80 my-24 py-24">
+    <section className="relative flex h-80 items-center overflow-hidden bg-white text-[#F4F1EA] my-24 py-8 sm:h-96">
       {!imageError && (
         <motion.div
           initial={{ scale: 1.12 }}
@@ -23,26 +23,30 @@ export default function PromoBanner({ product }: { product: Product }) {
           transition={{ duration: 8, ease: 'easeOut' }}
           className="absolute inset-0"
         >
-          <Image
-            src="/image-4.jpeg"
-            alt=""
-            fill
-            onError={() => setImageError(true)}
-            className="object-cover"
-          />
+          <picture>
+            <source media="(max-width: 639px)" srcSet="/banner-mobile.webp" />
+            <Image
+              src="/banner-website.webp"
+              alt=""
+              fill
+              onError={() => setImageError(true)}
+              className="object-cover"
+            />
+          </picture>
         </motion.div>
       )}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/30" />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+      <div className="relative z-10 mx-auto h-full w-full max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="flex items-center justify-center sm:justify-between"
+          className="flex h-full flex-col items-center text-center"
         >
-          <div className="hidden sm:block">
+          {/* Keep the promotional copy off small screens so the call to action stays clear. */}
+          {/* <div className="hidden sm:block">
             <p className="text-xs uppercase tracking-[0.2em] text-bronze">Limited time</p>
             <p className="mt-2 font-display text-3xl sm:text-4xl">
               Save {formatRupees(savingsPaise)} on Imperial Wood
@@ -51,11 +55,11 @@ export default function PromoBanner({ product }: { product: Product }) {
               {percentOff}% off — {formatRupees(product.sale_price_paise)} instead of{' '}
               {formatRupees(product.regular_price_paise)}.
             </p>
-          </div>
+          </div> */}
 
           <Link
             href={`/products/${product.slug}`}
-            className="mx-auto inline-block shrink-0 rounded-full bg-[#F4F1EA] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-[#0A0908] transition-all duration-300 hover:scale-105 hover:opacity-90 sm:mx-0"
+            className="mt-auto mb-2 inline-block shrink-0 rounded-full bg-[#F4F1EA] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-[#0A0908] transition-all duration-300 hover:scale-105 hover:opacity-90"
           >
             Shop now
           </Link>
