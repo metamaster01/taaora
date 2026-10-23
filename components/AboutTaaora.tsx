@@ -61,6 +61,7 @@ export default function AboutTaaora() {
                 fill
                 onError={() => setImageError(true)}
                 className="object-cover"
+                unoptimized
               />
             )}
           </motion.div>
