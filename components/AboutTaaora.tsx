@@ -56,7 +56,7 @@ export default function AboutTaaora() {
               </div>
             ) : (
               <Image
-                src="/about-3.webp"
+                src="/about-new-2.webp"
                 alt="About Taaora"
                 fill
                 onError={() => setImageError(true)}

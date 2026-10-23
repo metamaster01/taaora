@@ -9,3 +9,10 @@ export const COD_ENABLED = true
 // ₹50 handling fee, in paise. Applied only to COD orders — change this one
 // number to adjust the fee everywhere it's shown or charged.
 export const COD_HANDLING_FEE_PAISE = 5000
+
+
+
+ export const announcement = {
+       enabled: true,
+       messages: ['Diwali offer — extra 20% off', 'Free shipping on every order above ₹500', 'New arrivals are here! Check them out now.'],
+     }

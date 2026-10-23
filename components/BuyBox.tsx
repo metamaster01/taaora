@@ -12,6 +12,9 @@ export default function BuyBox({ product }: { product: Product }) {
   const [qty, setQty] = useState(1)
   const router = useRouter()
   const outOfStock = product.stock_count <= 0
+  const discountPct = product.regular_price_paise > product.sale_price_paise
+    ? Math.round(((product.regular_price_paise - product.sale_price_paise) / product.regular_price_paise) * 100)
+    : 0
 
   const details = [
     product.size_ml ? `${product.size_ml} ml` : null,
@@ -26,11 +29,27 @@ export default function BuyBox({ product }: { product: Product }) {
         {product.tagline && <p className="mt-2 text-muted">{product.tagline}</p>}
       </div>
 
-      <div className="flex items-baseline gap-3">
+      <div className="flex flex-wrap items-baseline gap-3">
         <span className="font-display text-2xl text-ink">{formatRupees(product.sale_price_paise)}</span>
         {product.regular_price_paise > product.sale_price_paise && (
           <span className="text-muted line-through">{formatRupees(product.regular_price_paise)}</span>
         )}
+        {discountPct > 0 && (
+          <span className="bg-ink px-2 py-1 text-xs font-medium uppercase tracking-wide text-paper">
+            {discountPct}% off
+          </span>
+        )}
+      </div>
+
+      <div className="border border-hair bg-paper p-3 text-sm">
+        <p className="font-medium text-ink">
+          Diwali offer{discountPct > 0 ? ` — save ${discountPct}%` : ' — festive savings'}
+        </p>
+        <p className={`mt-1 ${outOfStock ? 'text-muted' : 'text-amber-700'}`}>
+          {outOfStock
+            ? 'Currently out of stock'
+            : `Sale-time stock: ${product.stock_count} available${product.stock_count <= 5 ? ' — order soon!' : ''}`}
+        </p>
       </div>
 
       {details.length > 0 && (

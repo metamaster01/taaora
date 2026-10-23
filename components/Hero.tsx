@@ -402,13 +402,13 @@ export default function Hero({ product }: { product: Product }) {
               </div>
             )} */}
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#D4AF37]">
-              A limited-time offer
+              Special Diwali offer
             </p>
             <p className="mt-3 font-display text-2xl leading-snug text-[#F4F1EA]">
               Make Imperial Wood your signature.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-[#C9C2B4]">
-              Save ₹400 on a bold, lasting fragrance. Now ₹1,099, down from ₹1,499.
+              Get 40% off a bold, lasting fragrance. Now <strong>₹899</strong>, down from <s>₹1,499</s>.
             </p>
             <Link
               href={`/products/${product.slug}`}
@@ -436,12 +436,12 @@ export default function Hero({ product }: { product: Product }) {
             </div>
           )} */}
           <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#D4AF37]">
-            Limited-time offer
+            Special Diwali offer
           </p>
           <p className="mt-2 text-[14px] leading-relaxed text-[#C9C2B4]">
-            Save ₹400 on Imperial Wood.<br />
-            Now ₹1,099 instead of ₹1,499.<br />
-            Bold, lasting fragrance — 27% off.
+            Get 40% off Imperial Wood.<br />
+            Now <strong>₹899</strong> instead of <s>₹1,499</s>.<br />
+            Bold, lasting fragrance.
           </p>
           <Link
             href={`/products/${product.slug}`}
