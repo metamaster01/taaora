@@ -31,6 +31,7 @@ export default function PromoBanner({ product }: { product: Product }) {
               fill
               onError={() => setImageError(true)}
               className="object-cover"
+              unoptimized
             />
           </picture>
         </motion.div>
