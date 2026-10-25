@@ -616,7 +616,7 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
           className="justify-self-center transition-transform duration-300 hover:scale-105 sm:absolute sm:left-1/2 sm:-translate-x-1/2"
         >
           <Image
-            src="/logo-3.png"
+            src="/logo-removebg-2.png"
             alt="Taaora"
             width={112}
             height={96}
