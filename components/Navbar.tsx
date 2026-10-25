@@ -564,7 +564,7 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
 
 
       {announcement.enabled && (
-       <div className="group relative flex h-8 items-center overflow-hidden bg-ink text-[11px] uppercase tracking-[0.2em] text-paper">
+       <div className="group relative flex h-6 sm:h-6 md:h-8 items-center overflow-hidden bg-ink text-[11px] uppercase tracking-[0.2em] text-paper">
          <div className="flex w-max animate-[marquee_28s_linear_infinite] whitespace-nowrap group-hover:[animation-play-state:paused] motion-reduce:animate-none">
            {[0, 1].map((n) => (
              <div key={n} className="flex shrink-0 items-center" aria-hidden={n === 1}>
@@ -577,7 +577,7 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
        </div>
      )}
 
-      <nav className="relative mx-auto grid max-w-6xl grid-cols-3 items-center px-3 py-6 sm:flex sm:justify-between sm:px-6 sm:py-4 md:py-6">
+      <nav className="relative mx-auto grid max-w-6xl grid-cols-3 items-center px-3 py-2 sm:flex sm:justify-between sm:px-6 sm:py-2 md:py-6">
         {/* LEFT: menu + track icons (mobile) / links (desktop) */}
         <div className="flex items-center justify-self-start">
           <div className="flex items-center sm:hidden">
