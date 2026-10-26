@@ -381,7 +381,7 @@ export default function Hero({ product }: { product: Product }) {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="max-w-2xl font-display text-[2.5rem] font-medium leading-[1.08] tracking-tight sm:text-4xl lg:text-7xl"
+            className="max-w-2xl font-display text-[2.5rem] font-medium leading-[1.08] tracking-tight sm:text-3xl lg:text-7xl"
           >
             <span className="block sm:inline">Wear a fragrance</span>{" "}
             <span className="block sm:inline">that becomes your</span>{" "}

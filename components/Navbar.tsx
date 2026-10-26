@@ -616,11 +616,11 @@ export default function Navbar({ mode = 'solid' }: { mode?: 'solid' | 'auto' }) 
           className="justify-self-center transition-transform duration-300 hover:scale-105 sm:absolute sm:left-1/2 sm:-translate-x-1/2"
         >
           <Image
-            src="/logo-removebg-2.png"
+            src="/logo-new.png"
             alt="Taaora"
             width={112}
             height={96}
-            className="h-14 w-20 object-contain sm:h-16 sm:w-24 md:h-[72px] md:w-28"
+            className="h-14 w-20 object-contain sm:h-18 sm:w-26 md:h-[72px] md:w-28"
             priority
           />
         </Link>
