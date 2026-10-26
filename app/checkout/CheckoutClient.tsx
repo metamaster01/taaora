@@ -687,14 +687,35 @@ export default function CheckoutClient({ product, qty }: { product: Product; qty
   return (
     <div className="min-h-screen bg-paper text-ink">
       <header className="border-b border-hair px-6 py-2">
-        <div className="mx-auto flex max-w-5xl justify-center">
+        <div className="relative mx-auto flex max-w-5xl justify-center">
+          <button
+            type="button"
+            onClick={() => router.back()}
+            aria-label="Go back"
+            className="absolute left-0 top-1/2 inline-flex -translate-y-1/2 items-center gap-2 rounded-sm text-ink transition-opacity hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-6 w-6"
+            >
+              <path d="M10 5 3 12l7 7" />
+              <path d="M3 12h12a6 6 0 0 1 6 6" />
+            </svg>
+            <span className="hidden text-sm sm:inline">Go back</span>
+          </button>
           <Link href="/" className="block">
             <Image
-              src="/logo-3.png"
+              src="/logo-new.png"
               alt="Taaora"
               width={112}
               height={80}
-              className="h-20 w-24 object-contain sm:w-28"
+              className="h-16 w-24 object-contain sm:w-28 md:h-20"
             />
           </Link>
         </div>
